@@ -21,8 +21,8 @@ if __name__ == '__main__':
     setup(
         name='temboard-agent',
         version=VERSION,
-        author='Julien Tachoires',
-        author_email='julien.tachoires.nospam@dalibo.com',
+        author='Dalibo',
+        author_email='contact@dalibo.com',
         license='PostgreSQL',
         url='http://temboard.io/',
         description='Administration & monitoring PostgreSQL agent.',
