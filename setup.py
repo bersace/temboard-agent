@@ -21,7 +21,8 @@ if __name__ == '__main__':
     setup(
         name='temboard-agent',
         version=VERSION,
-        author='Dalibo',
+        author='Julien Tachoires',
+        author_email='julien.tachoires.nospam@dalibo.com',
         license='PostgreSQL',
         packages=find_packages(),
         scripts=[
