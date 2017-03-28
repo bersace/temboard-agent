@@ -24,12 +24,6 @@ if __name__ == '__main__':
         author='Julien Tachoires',
         author_email='julien.tachoires.nospam@dalibo.com',
         license='PostgreSQL',
-        packages=find_packages(),
-        scripts=[
-            'temboard-agent',
-            'temboard-agent-adduser',
-            'temboard-agent-password',
-        ],
         url='http://temboard.io/',
         description='Administration & monitoring PostgreSQL agent.',
         long_description=open('README.rst').read(),
@@ -43,6 +37,12 @@ if __name__ == '__main__':
             "Programming Language :: Python :: 2 :: Only",
             "Topic :: Database :: Database Engines/Servers",
             "Topic :: System :: Monitoring",
+        ],
+        packages=find_packages(),
+        scripts=[
+            'temboard-agent',
+            'temboard-agent-adduser',
+            'temboard-agent-password',
         ],
         data_files=[('share/temboard-agent/', [
             'share/temboard-agent.conf.sample',
