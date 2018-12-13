@@ -4,7 +4,7 @@
 # COMPOSE_FILE=docker-compose.yml:docker/docker-compose.dev.yml and run
 # docker-compose as usual.
 
-version: '2'
+version: '3'
 
 services:
   agent:

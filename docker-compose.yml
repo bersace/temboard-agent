@@ -1,6 +1,6 @@
 # See docs/contributing.rst to figure out how to use this docker-compose file
 
-version: '2'
+version: '3'
 
 volumes:
   data:
@@ -13,7 +13,7 @@ services:
       POSTGRES_USER: temboard
       POSTGRES_PASSWORD: temboard
     labels:
-      com.dnsdock.alias: postgres.temboard.docker
+      com.dnsdock.alias: repository.${COMPOSE_PROJECT_NAME-tba}.docker
 
   ui:
     image: dalibo/temboard:latest
@@ -26,7 +26,7 @@ services:
     ports:
       - "8888:8888"
     labels:
-      com.dnsdock.alias: www.temboard.docker
+      com.dnsdock.alias: ui.${COMPOSE_PROJECT_NAME-tba}.docker
 
   instance:
     image: postgres:11-alpine
@@ -34,7 +34,7 @@ services:
       - data:/var/lib/postgresql/data
       - run:/var/run/postgresql
     labels:
-      com.dnsdock.alias: instance.temboard.docker
+      com.dnsdock.alias: repository.${COMPOSE_PROJECT_NAME-tba}.docker
 
   agent:
     image: dalibo/temboard-agent
@@ -56,4 +56,4 @@ services:
       - instance:instance.fqdn
     command: tail -f /dev/null
     labels:
-      com.dnsdock.alias: agent.temboard.docker
+      com.dnsdock.alias: agent.${COMPOSE_PROJECT_NAME-tba}.docker
