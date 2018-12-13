@@ -8,7 +8,7 @@ volumes:
 
 services:
   repository:
-    image: postgres:10-alpine
+    image: postgres:11-alpine
     environment:
       POSTGRES_USER: temboard
       POSTGRES_PASSWORD: temboard
@@ -29,7 +29,7 @@ services:
       com.dnsdock.alias: www.temboard.docker
 
   instance:
-    image: postgres:10-alpine
+    image: postgres:11-alpine
     volumes:
       - data:/var/lib/postgresql/data
       - run:/var/run/postgresql
